@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/swipe_refresh"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <pl.cubesoft.smagabakery.view.EmptyRecyclerView
+            android:id="@+id/recycler"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:divider="@null"
+            android:dividerHeight="2dp"
+            android:fadeScrollbars="true"
+            android:fadingEdge="horizontal|vertical"
+            android:fastScrollEnabled="true"
+            android:horizontalSpacing="2dp"
+            android:scrollbars="vertical"
+            android:verticalSpacing="2dp" />
+        <!-- android:layoutAnimation="@anim/layout_fade" -->
+
+        <LinearLayout
+            android:id="@+id/empty"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center_vertical|center_horizontal"
+            android:layout_margin="20dp"
+            android:gravity="center_vertical|center_horizontal"
+            android:orientation="vertical"
+            android:visibility="visible">
+
+
+            <ImageView
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_gravity="center"
+                android:adjustViewBounds="true"
+                android:scaleType="fitCenter"
+                android:tint="@color/colorPlaceholderGrey"
+                app:srcCompat="@drawable/ic_person_outline_black_24dp" />
+
+
+            <TextView
+                style="@style/TextAppearance.AppCompat.Headline"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="sans-serif-light"
+                android:gravity="center"
+                android:text="The list of persons is empty"
+                android:visibility="visible" />
+
+            <TextView
+                style="@style/TextAppearance.AppCompat.Medium"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical|center_horizontal"
+                android:layout_marginTop="20dp"
+                android:fontFamily="sans-serif-light"
+                android:gravity="center_vertical|center_horizontal"
+                android:text="There are no persons to explore"
+                android:visibility="visible" />
+
+        </LinearLayout>
+
+
+        <!--
+
+            <android.support.design.widget.FloatingActionButton
+                android:id="@+id/fabSort"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|end"
+                android:layout_margin="@dimen/fab_margin"
+                android:tint="@color/colorIcon"
+                app:srcCompat="@drawable/ic_sort_black_24dp"
+                android:visibility="gone"/>
+    -->
+
+    </RelativeLayout>
+</android.support.v4.widget.SwipeRefreshLayout>
