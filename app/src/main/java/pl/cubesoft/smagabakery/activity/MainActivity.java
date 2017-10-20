@@ -147,9 +147,9 @@ public class MainActivity extends BaseActivity implements PersonListAdapter.OnPe
 
                         },
                         throwable -> {
-                            Timber.e("Error loading places!");
+                            Timber.e("Error loading contacts!");
 
-                            showSnackBar(R.id.coordinator, "Error loading places!");
+                            showSnackBar(R.id.coordinator, "Error loading contacts!");
                         }, () -> {
                             setRefreshing(false);
                         }));
@@ -174,7 +174,7 @@ public class MainActivity extends BaseActivity implements PersonListAdapter.OnPe
                 final int position = event.args.getInt(PARAM_POSITION);
                 AlertDialogFragment.Item item = event.items.get(0);
                 final int color = CELL_COLORS.get(item.id).color;
-                doChageItemColor(position, color);
+                doChangeItemColor(position, color);
 
                 break;
             }
@@ -188,7 +188,7 @@ public class MainActivity extends BaseActivity implements PersonListAdapter.OnPe
         personController.removeContact(position);
     }
 
-    private void doChageItemColor(int position, int color) {
+    private void doChangeItemColor(int position, int color) {
         adapter.setItemBackgroundColor(position, color);
     }
 
